@@ -102,6 +102,89 @@ HOST: <a href="http://api.epmap.org">http://api.epmap.org</a></p>
 </li>
 </ul>
 
+<h2>
+<a id="指定站点空气质量api-apiv1airstationstation_codestation_code" class="anchor" href="#%E6%8C%87%E5%AE%9A%E7%AB%99%E7%82%B9%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8Fapi-apiv1airstationstation_codestation_code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>指定站点空气质量API [/api/v1/air/station?station_code={station_code}]</h2>
+
+<h3>
+<a id="list-get-2" class="anchor" href="#list-get-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>List [GET]</h3>
+
+<ul>
+<li>Parameters
+
+<ul>
+<li>station_code (required, string, <code>1144A</code>) ... 监测站点编码</li>
+</ul>
+</li>
+<li>
+<p>Response 200 (application/json)</p>
+
+<pre><code>    {
+        success: true,
+        data: {
+            city: "上海市",
+            city_code: "310000",
+            station: "徐汇上师大",
+            station_code: "1144A",
+            AQI: "105.0",
+            pollutions: "臭氧1小时",
+            level: "",
+            SO2: "10.0",
+            NO2: "30.0",
+            CO: "0.8",
+            O3: "210.0",
+            PM2_5: "20.0",
+            PM10: "41.0",
+            longitude: "121.412",
+            latitude: "31.1654",
+            pubtime: "2016-08-24 13:00:00"
+        }
+    }
+</code></pre>
+</li>
+</ul>
+
+<h2>
+<a id="查询最近监测站空气质量api-apiv1airlongitudelongitudelatitudelatitude" class="anchor" href="#%E6%9F%A5%E8%AF%A2%E6%9C%80%E8%BF%91%E7%9B%91%E6%B5%8B%E7%AB%99%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8Fapi-apiv1airlongitudelongitudelatitudelatitude" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>查询最近监测站空气质量API [/api/v1/air?longitude={longitude}&amp;latitude={latitude}]</h2>
+
+<h3>
+<a id="list-get-3" class="anchor" href="#list-get-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>List [GET]</h3>
+
+<ul>
+<li>Parameters
+
+<ul>
+<li>longitude (required, float, <code>121.260372</code>) ... 经度</li>
+<li>latitude (required, float, <code>31.09805</code>) ... 纬度</li>
+</ul>
+</li>
+<li>
+<p>Response 200 (application/json)</p>
+
+<pre><code>    {
+        success: true,
+        data: {
+            city: "上海市",
+            city_code: "310000",
+            station: "徐汇上师大",
+            station_code: "1144A",
+            AQI: "105.0",
+            pollutions: "臭氧1小时",
+            level: "",
+            SO2: "10.0",
+            NO2: "30.0",
+            CO: "0.8",
+            O3: "210.0",
+            PM2_5: "20.0",
+            PM10: "41.0",
+            longitude: "121.412",
+            latitude: "31.1654",
+            pubtime: "2016-08-24 13:00:00"
+        }
+    }
+</code></pre>
+</li>
+</ul>
+
 <h1>
 <a id="调用api" class="anchor" href="#%E8%B0%83%E7%94%A8api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>调用API</h1>
 
