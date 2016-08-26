@@ -1,80 +1,62 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://api.epmap.org
 
-# qingyuetech
+# 青悦科技
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+国控实时空气质量查询
 
-## Questions Collection [/questions]
+## 国控城市及监测点API [/api/v1/air/station_list]
 
-### List All Questions [GET]
+### List [GET]
 
 + Response 200 (application/json)
-
+    
         [
+        {
+            success: true,
+            data: [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
+                city: "寿光市",
+                city_code: "0",
+                station: "监测站",
+                station_code: "1959A",
+                lng: 118.746,
+                lat: 36.881
+            },
+            {
+                city: "寿光市",
+                city_code: "0",
+                station: "世纪学校",
+                station_code: "1960A",
+                lng: 118.78,
+                lat: 36.864
+            },
+            ......
         ]
 
-### Create a New Question [POST]
+## 指定城市空气质量API [/api/v1/air/city?city={city_name}]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
+### List [GET]
++ Parameters
+    + city_name (required, string, `上海市`) ... 城市名称
++ Response 200 (application/json)
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                success: true,
+                data: {
+                    city: "上海市",
+                    city_code: "370783",
+                    AQI: "120.0",
+                    pollutions: "臭氧1小时",
+                    level: "3",
+                    SO2: "26.0",
+                    NO2: "15.0",
+                    CO: "0.8",
+                    O3: "239.0",
+                    PM2_5: "46.0",
+                    PM10: "100.0",
+                    longitude: "118.763",
+                    latitude: "36.8725",
+                    pubtime: "2016-08-24 13:00:00"
+                }
             }
