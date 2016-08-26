@@ -60,3 +60,63 @@ HOST: http://api.epmap.org
                     pubtime: "2016-08-24 13:00:00"
                 }
             }
+            
+
+## 指定站点空气质量API [/api/v1/air/station?station_code={station_code}]
+
+### List [GET]
++ Parameters
+    + station_code (required, string, `1144A`) ... 监测站点编码
++ Response 200 (application/json)
+
+            {
+                success: true,
+                data: {
+                    city: "上海市",
+                    city_code: "310000",
+                    station: "徐汇上师大",
+                    station_code: "1144A",
+                    AQI: "105.0",
+                    pollutions: "臭氧1小时",
+                    level: "",
+                    SO2: "10.0",
+                    NO2: "30.0",
+                    CO: "0.8",
+                    O3: "210.0",
+                    PM2_5: "20.0",
+                    PM10: "41.0",
+                    longitude: "121.412",
+                    latitude: "31.1654",
+                    pubtime: "2016-08-24 13:00:00"
+                }
+            }
+
+
+## 查询最近监测站空气质量API [/api/v1/air?longitude={longitude}&latitude={latitude}]
+### List [GET]
++ Parameters
+    + longitude (required, float, `121.260372`) ... 经度
+    + latitude (required, float, `31.09805`) ... 纬度
++ Response 200 (application/json)
+
+            {
+                success: true,
+                data: {
+                    city: "上海市",
+                    city_code: "310000",
+                    station: "徐汇上师大",
+                    station_code: "1144A",
+                    AQI: "105.0",
+                    pollutions: "臭氧1小时",
+                    level: "",
+                    SO2: "10.0",
+                    NO2: "30.0",
+                    CO: "0.8",
+                    O3: "210.0",
+                    PM2_5: "20.0",
+                    PM10: "41.0",
+                    longitude: "121.412",
+                    latitude: "31.1654",
+                    pubtime: "2016-08-24 13:00:00"
+                }
+            }
